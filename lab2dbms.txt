@@ -1,0 +1,35 @@
+
+lab 1
+============
+1.SQL> select staff_name as empname,design_code as designation_code from staff_mas
+ter where staff_sal between 12000 and 25000 and hiredate< '1-jan-2003';
+
+
+
+2.SQL> select staff_code,staff_name,dept_code,hiredate from staff_master
+where (extract (year from sysdate))-(extract(year from hiredate))>10  order by hiredate;
+
+
+select staff_code,staff_name,dept_code from staff_master
+(extract(year from sysdate))-(extract(year from hiredate)) where (extract (year from sysdate))-(extract(year from hiredate))>18;
+
+
+3.SQL> select staff_code,staff_name,design_code,dept_code,hiredate,staff_dob,staff
+_address,mgr_code notnull,staff_sal from staff_master;
+
+
+4.SQL> select book_code,book_name,book_pub_year,book_pub_author from book_master w
+here book_pub_year between 2001 and 2004 and book_name like'%&%';
+
+
+5.select staff_name from staff_master where staff_name like '%a%';
+
+lab 2
+==============
+2.1 select staff_name,lpad(staff_sal,15,'$') from staff_master;
+
+2.2 select student_name as Name, To_char(Student_dob,'MONTH DD YYYY') as DOB FROM student_master where to_char(student_dob,'day') like '%sunday%' or to_char(student_dob,'day') like '%saturday%';
+
+2.3 select staff_name,round(MONTHS_BETWEEN(sysdate,hiredate)) as MonthsWorked from staff_master order by MonthsWorked; 
+
+2.4 select * from staff_master where hiredate between 

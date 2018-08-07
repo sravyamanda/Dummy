@@ -1,0 +1,24 @@
+SELECT staff_code,staff_nameFROM staff_master
+WHERE staff_dob
+BETWEEN ’01-Jan-1980’
+AND ’31-Jan-1980’;
+
+SELECT dept_codeFROM department_master
+WHERE dept_nameIN ( ‘Computer Science’, ‘Mechanics’);
+
+SELECT dept_codeFROM department_master
+WHERE dept_nameIN ( ‘Computer Science’, ‘Mechanics’);
+
+SELECT book_code,book_nameFROM book_master
+WHERE book_pub_authorLIKE ‘%Kanetkar%’ ;
+
+SELECT staff_code,staff_name,staff_salFROM staff_master
+WHERE dept_code= 10
+AND staff_dob> ’01-Jan-1945’;
+
+SELECT book_codeFROM book_master
+WHERE book_pub_authorLIKE ‘%Kanetkar%’
+OR book_nameLIKE ‘%Pointers%’;
+
+SELECT staff_code,staff_nameFROM staff_master
+WHERE dept_codeNOT IN ( 10,20 );
